@@ -89,6 +89,22 @@
             <version>3.24.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Add the missing WebDriver support dependencies -->
+        <!-- These dependencies are required for WebDriver support like WebDriverWait, ExpectedConditions, etc. -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+        
+        <!-- If using selenium-chrome-driver (for example) -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
