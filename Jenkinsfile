@@ -11,13 +11,32 @@ pipeline {
         MAVEN_OPTS = '-Xmx1024m'
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                echo 'Cloning GitHub repository...'
-                git url: 'https://github.com/allammaheshbabu/automationexerciserepo.git', branch: 'main'
-            }
-        }
+   stage('Checkout') {
+    steps {
+        echo 'Checking out latest code from GitHub...'
+        
+        git branch: 'main',
+            url: 'https://github.com/allammaheshbabu/automationexerciserepo.git'
+
+        sh '''
+            git config --global user.name "Jenkins CI"
+            git config --global user.email "jenkins@example.com"
+
+            # Ensure we are on main branch
+            git checkout main
+
+            # If there are new/modified files in workspace, commit & push
+            if [ -n "$(git status --porcelain)" ]; then
+                git add .
+                git commit -m "Auto-commit from Jenkins build"
+                git push origin main
+            else
+                echo "No changes to commit."
+            fi
+        '''
+    }
+}
+
 
         stage('Build') {
             steps {

@@ -75,7 +75,7 @@ public class ContactUsTest {
         System.out.println("YouTube Channel Page Title: " + actualTitle);
 
         // Expected title will contain "Automation Exercise"
-        String expectedTitleKeyword = "Automation Exercise - YouTube";
+        String expectedTitleKeyword = "AutomationExercise - YouTube";
 
         // Verify title contains keyword
         Assert.assertTrue(actualTitle.contains(expectedTitleKeyword),

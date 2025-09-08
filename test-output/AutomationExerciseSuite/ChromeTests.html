@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  ProductCartTests</title>
+<title>TestNG:  ChromeTests</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>ProductCartTests</h2><table border='1' align="center">
+<h2 align='center'>ChromeTests</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>14/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Sep 08 12:35:46 IST 2025</td>
+<td>Started on:</td><td>Mon Sep 08 12:32:16 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>91 seconds (91095 ms)</td>
+<tr><td>Total time:</td><td>270 seconds (270355 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -82,10 +82,10 @@ function toggleAllBoxes() {
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c5d631faa16ab2a2650b56ccf70e8c82, clickElement {id=f.F0C2F5AB744D021CF3BB16B7CC0F011F.d.31E1B01B82FB911997F3AAFF07772726.e.4683}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: C:\Users\allam\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54540}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54540/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c5d631faa16ab2a2650b56ccf70e8c82)] -&gt; css selector: button[type=&apos;submit&apos;]]
-Session ID: c5d631faa16ab2a2650b56ccf70e8c82
+Command: [4dc7c0513ae47c5ce1e237d26d44008a, clickElement {id=f.2FFB04D041F867708AC59AC968E64875.d.14A5D16AC8802A23B129C5308F4FBCDA.e.2592}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: C:\Users\allam\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53652}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53652/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4dc7c0513ae47c5ce1e237d26d44008a)] -&gt; css selector: button[type=&apos;submit&apos;]]
+Session ID: 4dc7c0513ae47c5ce1e237d26d44008a
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -98,16 +98,20 @@ Session ID: c5d631faa16ab2a2650b56ccf70e8c82
 	at pages.CheckoutPage.clickPayAndConfirm(CheckoutPage.java:33)
 	at tests.ProductFlowTest.completeCheckoutFlow(ProductFlowTest.java:125)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace830687787", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace830687787'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;form-control btn btn-primary submit-button&quot; data-qa=&quot;pay-button&quot; id=&quot;submit&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (760, 565). Other element would receive the click: &lt;div class=&quot;grippy-host&quot;&gt;&lt;/div&gt;
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2130319366", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2130319366'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;form-control btn btn-primary submit-button&quot; data-qa=&quot;pay-button&quot; id=&quot;submit&quot; type=&quot;submit&quot;&gt;...&lt;/button&gt; is not clickable at point (760, 565). Other element would receive the click: &lt;div class=&quot;grippy-host&quot;&gt;&lt;/div&gt;
   (Session info: chrome=140.0.7339.81)
 Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c5d631faa16ab2a2650b56ccf70e8c82, clickElement {id=f.F0C2F5AB744D021CF3BB16B7CC0F011F.d.31E1B01B82FB911997F3AAFF07772726.e.4683}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: C:\Users\allam\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54540}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54540/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (c5d631faa16ab2a2650b56ccf70e8c82)] -&gt; css selector: button[type=&apos;submit&apos;]]
-Session ID: c5d631faa16ab2a2650b56ccf70e8c82
+Command: [4dc7c0513ae47c5ce1e237d26d44008a, clickElement {id=f.2FFB04D041F867708AC59AC968E64875.d.14A5D16AC8802A23B129C5308F4FBCDA.e.2592}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: C:\Users\allam\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53652}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53652/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (4dc7c0513ae47c5ce1e237d26d44008a)] -&gt; css selector: button[type=&apos;submit&apos;]]
+Session ID: 4dc7c0513ae47c5ce1e237d26d44008a
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -136,21 +140,15 @@ Session ID: c5d631faa16ab2a2650b56ccf70e8c82
 	at org.testng.TestRunner.privateRun(TestRunner.java:741)
 	at org.testng.TestRunner.run(TestRunner.java:616)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+	at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
 </pre></div></td>
 <td>25</td>
-<td>tests.ProductFlowTest@39b43d60</td></tr>
+<td>tests.ProductFlowTest@3cfdd820</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -161,20 +159,75 @@ Session ID: c5d631faa16ab2a2650b56ccf70e8c82
 <td><b>Instance</b></td>
 </tr>
 <tr>
+<td title='tests.LoginTest.testLoginEmpty()'><b>testLoginEmpty</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>2</td>
+<td>tests.LoginTest@6f8e8894</td></tr>
+<tr>
 <td title='tests.ProductFlowTest.shoppingFlowWithLogin()'><b>shoppingFlowWithLogin</b><br>Test class: tests.ProductFlowTest</td>
 <td></td>
-<td>30</td>
-<td>tests.ProductFlowTest@39b43d60</td></tr>
+<td>38</td>
+<td>tests.ProductFlowTest@3cfdd820</td></tr>
+<tr>
+<td title='tests.ContactUsTest.testSubmitContactFormWithFile()'><b>testSubmitContactFormWithFile</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>5</td>
+<td>tests.ContactUsTest@928763c</td></tr>
+<tr>
+<td title='tests.LoginTest.verifyLoginPageTitle()'><b>verifyLoginPageTitle</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>6</td>
+<td>tests.LoginTest@6f8e8894</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyContactUsPageLoad()'><b>verifyContactUsPageLoad</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>2</td>
+<td>tests.ContactUsTest@928763c</td></tr>
 <tr>
 <td title='tests.ProductFlowTest.verifyProductsPageTitle()'><b>verifyProductsPageTitle</b><br>Test class: tests.ProductFlowTest</td>
 <td></td>
 <td>7</td>
-<td>tests.ProductFlowTest@39b43d60</td></tr>
+<td>tests.ProductFlowTest@3cfdd820</td></tr>
+<tr>
+<td title='tests.RegisterTest.verifySignupPageTitle()'><b>verifySignupPageTitle</b><br>Test class: tests.RegisterTest</td>
+<td></td>
+<td>3</td>
+<td>tests.RegisterTest@2c78324b</td></tr>
+<tr>
+<td title='tests.RegisterTest.testRegisterNegative()'><b>testRegisterNegative</b><br>Test class: tests.RegisterTest</td>
+<td></td>
+<td>5</td>
+<td>tests.RegisterTest@2c78324b</td></tr>
 <tr>
 <td title='tests.ProductFlowTest.verifyProductDetailsPage()'><b>verifyProductDetailsPage</b><br>Test class: tests.ProductFlowTest</td>
 <td></td>
+<td>12</td>
+<td>tests.ProductFlowTest@3cfdd820</td></tr>
+<tr>
+<td title='tests.LoginTest.testLoginNegative()'><b>testLoginNegative</b><br>Test class: tests.LoginTest</td>
+<td></td>
 <td>3</td>
-<td>tests.ProductFlowTest@39b43d60</td></tr>
+<td>tests.LoginTest@6f8e8894</td></tr>
+<tr>
+<td title='tests.RegisterTest.testRegisterPositive()'><b>testRegisterPositive</b><br>Test class: tests.RegisterTest</td>
+<td></td>
+<td>39</td>
+<td>tests.RegisterTest@2c78324b</td></tr>
+<tr>
+<td title='tests.ContactUsTest.verifyYouTubeChannelLoad()'><b>verifyYouTubeChannelLoad</b><br>Test class: tests.ContactUsTest</td>
+<td></td>
+<td>8</td>
+<td>tests.ContactUsTest@928763c</td></tr>
+<tr>
+<td title='tests.RegisterTest.testRegisterEmptyFields()'><b>testRegisterEmptyFields</b><br>Test class: tests.RegisterTest</td>
+<td></td>
+<td>8</td>
+<td>tests.RegisterTest@2c78324b</td></tr>
+<tr>
+<td title='tests.LoginTest.testLoginPositive()'><b>testLoginPositive</b><br>Test class: tests.LoginTest</td>
+<td></td>
+<td>7</td>
+<td>tests.LoginTest@6f8e8894</td></tr>
 </table><p>
 </body>
 </html>
