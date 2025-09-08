@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AutomationSuite]">
+  <test thread-count="5" name="RegisterFirst(failed)">
+    <classes>
+      <class name="tests.RegisterTest">
+        <methods>
+          <include name="testRegisterPositive"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testRegisterEmptyFields"/>
+          <include name="testRegisterNegative"/>
+        </methods>
+      </class> <!-- tests.RegisterTest -->
+    </classes>
+  </test> <!-- RegisterFirst(failed) -->
+  <test thread-count="5" name="LoginSecond(failed)">
+    <classes>
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="testLoginEmptyFields"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testLoginPositive"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+    </classes>
+  </test> <!-- LoginSecond(failed) -->
+  <test thread-count="5" name="CartFourth(failed)">
+    <classes>
+      <class name="tests.CartTest">
+        <methods>
+          <include name="testProceedToCheckout"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.CartTest -->
+    </classes>
+  </test> <!-- CartFourth(failed) -->
+</suite> <!-- Failed suite [AutomationSuite] -->

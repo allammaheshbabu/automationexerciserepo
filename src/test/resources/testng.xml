@@ -1,0 +1,28 @@
+<suite name="AutomationExerciseSuite" parallel="false">
+    <test name="RegisterTests">
+        <classes>
+            <class name="tests.RegisterTest"/>
+        </classes>
+    </test>
+
+    <test name="LoginTests">
+        <classes>
+            <class name="tests.LoginTest"/>
+        </classes>
+    </test>
+     <test name="ProductCartTests">
+        <classes>
+            <class name="tests.ProductFlowTest"/>
+        </classes>
+    </test>
+    <test name="contactTests">
+        <classes>
+            <class name="tests.ContactUsTest"/>
+        </classes>
+    </test>
+    <listeners>
+    <listener class-name="utils.ExtentTestNGListener"/>
+</listeners>
+
+   
+</suite>

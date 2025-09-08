@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AutomationTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="AutomationTests(failed)">
+    <classes>
+      <class name="tests.CartTest">
+        <methods>
+          <include name="testProceedToCheckout"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.CartTest -->
+      <class name="tests.LoginTest">
+        <methods>
+          <include name="testLoginEmptyFields"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testLoginPositive"/>
+        </methods>
+      </class> <!-- tests.LoginTest -->
+      <class name="tests.RegisterTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testRegisterPositive"/>
+          <include name="tearDown"/>
+          <include name="testRegisterEmptyFields"/>
+          <include name="testRegisterNegative"/>
+        </methods>
+      </class> <!-- tests.RegisterTest -->
+      <class name="tests.ProductsTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="testAddProductToCartAndVerify"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- tests.ProductsTest -->
+    </classes>
+  </test> <!-- AutomationTests(failed) -->
+</suite> <!-- Failed suite [AutomationTestSuite] -->
