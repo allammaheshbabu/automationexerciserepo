@@ -16,9 +16,6 @@
         <testng.version>7.11.0</testng.version>
         <cucumber.version>7.11.0</cucumber.version>
         <extentreports.version>5.1.1</extentreports.version>
-        <guava.version>33.3.1-jre</guava.version>
-        <commons-io.version>2.11.0</commons-io.version>
-        <assertj.version>3.24.2</assertj.version>
     </properties>
 
     <dependencies>
@@ -36,7 +33,7 @@
             <version>${webdrivermanager.version}</version>
         </dependency>
 
-        <!-- TestNG (for running tests) -->
+        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
@@ -44,7 +41,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Cucumber for Behavior Driven Development (BDD) -->
+        <!-- Cucumber -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -64,39 +61,39 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Extent Reports (for reporting) -->
+        <!-- Extent Reports -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extentreports.version}</version>
         </dependency>
 
-        <!-- Guava (for utility functions) -->
+        <!-- Guava -->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
+            <version>33.3.1-jre</version>
         </dependency>
 
-        <!-- Apache Commons IO (for handling files, e.g., screenshots) -->
+        <!-- Apache Commons IO (for screenshots file copy) -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>${commons-io.version}</version>
+            <version>2.11.0</version>
         </dependency>
 
-        <!-- AssertJ (for assertions in tests) -->
+        <!-- AssertJ -->
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>${assertj.version}</version>
+            <version>3.24.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Maven Surefire Plugin (for running TestNG tests) -->
+            <!-- Maven Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

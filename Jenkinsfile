@@ -22,7 +22,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building project using Maven...'
-                bat 'mvn clean compile'
+                // Use Maven to compile and resolve dependencies
+                bat 'mvn clean install'
             }
         }
 
@@ -39,7 +40,7 @@ pipeline {
                 archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
                 publishHTML(target: [
                     reportDir: 'target/surefire-reports',
-                    reportFiles: 'index.html',
+                    reportFiles: 'index.html',  // Ensure index.html is generated
                     reportName: 'TestNG HTML Report',
                     keepAll: true,
                     alwaysLinkToLastBuild: true,
