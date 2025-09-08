@@ -1,75 +1,69 @@
 pipeline {
     agent any
 
+    tools {
+        jdk 'JDK21' // Make sure this JDK name matches Jenkins configuration
+    }
+
     environment {
-        JAVA_HOME = 'C:/Program Files/Java/jdk-21' // Update to your JDK path
-        PATH = "${env.JAVA_HOME}/bin;${env.PATH}"
-        PROJECT_DIR = "C:/Users/allam/eclipse-workspace/Eclipse Workspace/automation-testing-pratice"
-        LIB_DIR = "${PROJECT_DIR}/lib"
-        BIN_DIR = "${PROJECT_DIR}/bin"
+        PROJECT_DIR = "${WORKSPACE}" // Jenkins workspace
+        BIN_DIR = "${WORKSPACE}/bin"
+        SRC_DIR = "${WORKSPACE}/src"
+        LIB_DIR = "${WORKSPACE}/lib"
     }
 
     stages {
-
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/allammaheshbabu/automationexerciserepo.git'
+                git branch: 'main',
+                    url: 'https://github.com/allammaheshbabu/automationexerciserepo.git'
             }
         }
 
-        stage('Compile') {
+        stage('Prepare Workspace') {
             steps {
-                echo 'Compiling Java files...'
                 script {
+                    // Create bin folder if not exist
+                    if (!fileExists(BIN_DIR)) {
+                        sh "mkdir -p ${BIN_DIR}"
+                    }
+                }
+            }
+        }
+
+        stage('Compile Java') {
+            steps {
+                script {
+                    echo "Compiling Java files..."
+                    // Using Windows cmd if agent is Windows
                     bat """
-                    cd "${PROJECT_DIR}"
-                    if not exist bin mkdir bin
-                    for /R src %%f in (*.java) do (
-                        javac -d bin -cp "lib/*;bin" "%%f"
+                    for /R ${SRC_DIR} %%f in (*.java) do (
+                        javac -d ${BIN_DIR} -cp "${LIB_DIR}/*;${BIN_DIR}" "%%f"
                     )
                     """
                 }
             }
         }
 
-        stage('Run Tests') {
+        stage('Run TestNG') {
             steps {
-                echo 'Running TestNG tests...'
-                script {
-                    bat """
-                    cd "${PROJECT_DIR}"
-                    java -cp "bin;lib/*" org.testng.TestNG testng.xml
-                    """
-                }
-            }
-        }
-
-        stage('Publish Reports') {
-            steps {
-                echo 'Copy Extent Reports to Jenkins workspace'
-                // Assuming your Extent Reports output path is 'test-output/ExtentReports.html'
-                publishHTML(target: [
-                    reportDir: "${PROJECT_DIR}/test-output",
-                    reportFiles: 'ExtentReports.html',
-                    reportName: 'Extent Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true,
-                    allowMissing: false
-                ])
+                echo "Running TestNG tests..."
+                bat """
+                java -cp "${BIN_DIR};${LIB_DIR}/*" org.testng.TestNG testng.xml
+                """
             }
         }
     }
 
     post {
         always {
-            echo 'Cleaning up workspace...'
-            deleteDir()
-        }
-        failure {
-            echo 'Build failed!'
+            echo "Cleaning up workspace..."
         }
         success {
-            echo 'Build succeeded!'
+            echo "Build and tests completed successfully!"
+        }
+        failure {
+            echo "Build failed. Check logs for errors."
         }
     }
 }
