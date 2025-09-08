@@ -8,22 +8,11 @@
     <classes>
       <class name="tests.RegisterTest">
         <methods>
-          <include name="testRegisterNegative"/>
+          <include name="verifySignupPageTitle"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- tests.RegisterTest -->
     </classes>
   </test> <!-- RegisterTests(failed) -->
-  <test thread-count="5" name="ProductCartTests(failed)">
-    <classes>
-      <class name="tests.ProductFlowTest">
-        <methods>
-          <include name="completeCheckoutFlow"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- tests.ProductFlowTest -->
-    </classes>
-  </test> <!-- ProductCartTests(failed) -->
 </suite> <!-- Failed suite [AutomationExerciseSuite] -->

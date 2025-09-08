@@ -13,7 +13,27 @@ import java.time.Duration;
 
 public class RegisterTest extends BaseTest {
 
-	@Test(priority = 1)
+	
+	 @Test(priority = 1)
+	 public void verifySignupPageTitle() {
+	        // Navigate to signup page
+	        driver.get("https://automationexercise.com/signup");
+
+	        // Get page title
+	        String actualTitle = driver.getTitle();
+	        System.out.println("Signup Page Title: " + actualTitle);
+
+	        // Expected title (observed from the site)
+	        String expectedTitle = "Automation Exercise - Signup";
+
+	        // Assertion
+	        Assert.assertEquals(actualTitle, expectedTitle,
+	                "Signup page title mismatch! Page not loaded correctly.");
+
+	        System.out.println("✅ Signup page loaded successfully with correct title.");
+	        System.out.println("Test case 1 passed");
+	    }
+	@Test(priority = 2)
 	public void testRegisterPositive() {
 	    RegisterPage registerPage = new RegisterPage(driver);
 
@@ -49,11 +69,11 @@ public class RegisterTest extends BaseTest {
 	    homePage.logout();
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(text(),'Signup / Login')]")));
 	    System.out.println("User logged out after registration");
-	    System.out.println("test case  1 passed");
+	    System.out.println("test case  2 passed");
 	}
 
 
-    @Test(priority = 2)
+    @Test(priority = 3)
     public void testRegisterNegative() {
         RegisterPage registerPage = new RegisterPage(driver);
 
@@ -63,10 +83,10 @@ public class RegisterTest extends BaseTest {
         // Assert error message appears
         Assert.assertTrue(registerPage.isEmailAlreadyRegisteredErrorVisible(),
                 "Expected error for already registered email");
-        System.out.println("test case  2 passed");
+        System.out.println("test case  3 passed");
     }
 
-    @Test(priority = 3)
+    @Test(priority = 4)
     public void testRegisterEmptyFields() {
         RegisterPage registerPage = new RegisterPage(driver);
 
@@ -75,6 +95,6 @@ public class RegisterTest extends BaseTest {
         // Assert signup button is still visible (expected behavior)
         Assert.assertTrue(registerPage.isSignupButtonVisible(),
                 "Expected behavior: signup button remains visible for empty fields");
-        System.out.println("test case  3 passed");
+        System.out.println("test case  4 passed");
     }
 }

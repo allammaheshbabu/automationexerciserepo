@@ -12,8 +12,27 @@ import utils.TestData;
 import java.time.Duration;
 
 public class LoginTest extends BaseTest {
+	@Test(priority = 5)
+    public void verifyLoginPageTitle() {
+        // Navigate to login page
+        driver.get("https://automationexercise.com/login");
 
-    @Test(priority = 4)
+        // Get page title
+        String actualTitle = driver.getTitle();
+        System.out.println("Login Page Title: " + actualTitle);
+
+        // Expected title (based on site behavior)
+        String expectedTitle = "Automation Exercise - Signup / Login";
+
+        // Assertion
+        Assert.assertEquals(actualTitle, expectedTitle,
+                "Login page title mismatch! Page not loaded correctly.");
+
+        System.out.println("✅ Login page loaded successfully with correct title.");
+        System.out.println("Test case 5 passed");
+    }
+
+    @Test(priority = 6)
     public void testLoginPositive() {
         System.out.println("Registered Email: " + TestData.registeredEmail);
         System.out.println("Registered Password: " + TestData.registeredPassword);
@@ -31,7 +50,7 @@ public class LoginTest extends BaseTest {
             HomePage homePage = new HomePage(driver);
             Assert.assertTrue(homePage.isUserLoggedIn(), "User should be logged in with valid credentials");
             System.out.println("Login successful");
-            System.out.println("test case  4 passed");
+            System.out.println("test case  6 passed");
             
 
             // Optional: logout to keep tests independent
@@ -41,7 +60,7 @@ public class LoginTest extends BaseTest {
         }
     }
 
-    @Test(priority = 5)
+    @Test(priority = 7)
     public void testLoginNegative() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("wrong@gmail.com", "WrongPass");
@@ -49,10 +68,10 @@ public class LoginTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         // Pass if user is NOT logged in (expected behavior)
         Assert.assertFalse(homePage.isUserLoggedIn(), "User should NOT be logged in with wrong password");
-        System.out.println("test case  5 passed");
+        System.out.println("test case  7 passed");
     }
 
-    @Test(priority = 6)
+    @Test(priority = 8)
     public void testLoginEmpty() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.login("", "");
@@ -60,6 +79,6 @@ public class LoginTest extends BaseTest {
         HomePage homePage = new HomePage(driver);
         // Pass if user is NOT logged in (expected behavior)
         Assert.assertFalse(homePage.isUserLoggedIn(), "User should NOT be logged in with empty credentials");
-        System.out.println("test case  6 passed");
+        System.out.println("test case  8 passed");
     }
 }

@@ -36,7 +36,7 @@ public class ProductFlowTest extends BaseTest {
             ));
         }
     }
-    @Test(priority = 7)
+    @Test(priority = 9)
     public void verifyProductsPageTitle() {
         driver.get("https://automationexercise.com/products");
 
@@ -50,11 +50,11 @@ public class ProductFlowTest extends BaseTest {
 
         Assert.assertTrue(headerText.equalsIgnoreCase("All Products"),
                           "Page header text should be 'All Products'");
-        System.out.println("test case 7 passed");
+        System.out.println("test case 9 passed");
       
     }
 
-    @Test(priority = 8)
+    @Test(priority = 10)
     public void verifyProductDetailsPage() {
         driver.get("https://automationexercise.com/product_details/1");
 
@@ -68,11 +68,11 @@ public class ProductFlowTest extends BaseTest {
 
         // Assertion
         Assert.assertTrue(productName.length() > 0, "Product name should not be empty");
-        System.out.println("test case 8 passed");
+        System.out.println("test case 10 passed");
     }
 
 
-    @Test(priority = 9)
+    @Test(priority = 11)
     public void shoppingFlowWithLogin() {
         loginIfNotLoggedIn();
 
@@ -97,13 +97,13 @@ public class ProductFlowTest extends BaseTest {
                 By.id("cartModal") // Adjust ID if different
         ));
         Assert.assertTrue(modal.isDisplayed(), "Cart modal not displayed after adding product");
-        System.out.println("test case  9 passed");
+        System.out.println("test case  11 passed");
         
     }
 
 
 
-    @Test(priority = 10)
+    @Test(priority = 12)
     public void completeCheckoutFlow() throws InterruptedException {
         loginIfNotLoggedIn();
 
@@ -139,7 +139,7 @@ public class ProductFlowTest extends BaseTest {
         // ✅ Blindly pass
         Assert.assertTrue(true, "Forcing pass regardless of outcome");
 
-        System.out.println("test case 10 passed");
+        System.out.println("test case 12 passed");
     }
 
 
