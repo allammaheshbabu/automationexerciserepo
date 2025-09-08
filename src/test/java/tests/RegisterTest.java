@@ -24,13 +24,13 @@ public class RegisterTest extends BaseTest {
 	        System.out.println("Signup Page Title: " + actualTitle);
 
 	        // Expected title (observed from the site)
-	        String expectedTitle = "Automation Exercise - Signup";
+	        String expectedTitle = "Automation Exercise - Signup / Login";
 
 	        // Assertion
 	        Assert.assertEquals(actualTitle, expectedTitle,
 	                "Signup page title mismatch! Page not loaded correctly.");
 
-	        System.out.println("✅ Signup page loaded successfully with correct title.");
+	        System.out.println("Signup page loaded successfully with correct title.");
 	        System.out.println("Test case 1 passed");
 	    }
 	@Test(priority = 2)

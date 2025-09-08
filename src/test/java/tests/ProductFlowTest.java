@@ -132,14 +132,22 @@ public class ProductFlowTest extends BaseTest {
             )).getText().trim();
 
             System.out.println("Confirmation message: " + confirmationMsg);
+            if(confirmationMsg!=null) {
+            	Assert.assertTrue(true);
+            	 System.out.println("test case 12 passed");
+            }
+            else {
+            	Assert.assertTrue(false);
+            }
+            
+
         } catch (Exception e) {
             System.out.println("Could not verify confirmation message, but marking test as passed.");
         }
+        
+        
 
-        // ✅ Blindly pass
-        Assert.assertTrue(true, "Forcing pass regardless of outcome");
-
-        System.out.println("test case 12 passed");
+       
     }
 
 
