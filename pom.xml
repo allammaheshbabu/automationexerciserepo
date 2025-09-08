@@ -32,12 +32,14 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
-      <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-support -->
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-support</artifactId>
-    <version>4.35.0</version>
-</dependency>
+
+        <!-- selenium-support for ExpectedConditions and WebDriverWait -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${selenium.version}</version>
+        </dependency>
+
         <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -95,21 +97,12 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Add the missing WebDriver support dependencies -->
-        <!-- These dependencies are required for WebDriver support like WebDriverWait, ExpectedConditions, etc. -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-support</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-        
-        <!-- If using selenium-chrome-driver (for example) -->
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-chrome-driver</artifactId>
-            <version>${selenium.version}</version>
-        </dependency>
-
+        <!-- If using selenium-chrome-driver (not needed if using WebDriverManager) -->
+        <!-- <dependency> -->
+        <!--     <groupId>org.seleniumhq.selenium</groupId> -->
+        <!--     <artifactId>selenium-chrome-driver</artifactId> -->
+        <!--     <version>${selenium.version}</version> -->
+        <!-- </dependency> -->
     </dependencies>
 
     <build>
