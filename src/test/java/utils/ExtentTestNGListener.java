@@ -20,12 +20,24 @@ public class ExtentTestNGListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        testThread.get().log(Status.PASS, "Test Passed");
+        String testName = result.getMethod().getMethodName();
+        // Log negative/invalid tests clearly
+        if(testName.toLowerCase().contains("negative") || testName.toLowerCase().contains("invalid")) {
+            testThread.get().log(Status.PASS, "Negative test passed as expected ✅");
+        } else {
+            testThread.get().log(Status.PASS, "Test Passed");
+        }
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        testThread.get().log(Status.FAIL, "Test Failed: " + result.getThrowable());
+        String testName = result.getMethod().getMethodName();
+        // If negative test fails (unexpected), mark FAIL
+        if(testName.toLowerCase().contains("negative") || testName.toLowerCase().contains("invalid")) {
+            testThread.get().log(Status.FAIL, "Negative test failed ❌: " + result.getThrowable());
+        } else {
+            testThread.get().log(Status.FAIL, "Test Failed: " + result.getThrowable());
+        }
     }
 
     @Override

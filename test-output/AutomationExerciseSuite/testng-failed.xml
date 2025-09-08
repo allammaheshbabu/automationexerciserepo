@@ -4,6 +4,17 @@
   <listeners>
     <listener class-name="utils.ExtentTestNGListener"/>
   </listeners>
+  <test thread-count="5" name="RegisterTests(failed)">
+    <classes>
+      <class name="tests.RegisterTest">
+        <methods>
+          <include name="testRegisterNegative"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.RegisterTest -->
+    </classes>
+  </test> <!-- RegisterTests(failed) -->
   <test thread-count="5" name="ProductCartTests(failed)">
     <classes>
       <class name="tests.ProductFlowTest">

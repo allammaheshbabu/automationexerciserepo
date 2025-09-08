@@ -44,7 +44,7 @@ public class ContactUsTest {
         // Verify success message
         Assert.assertTrue(contactUsPage.isSuccessMessageVisible(),
                 "Contact form success message is not visible");
-        System.out.println("Test case 9 passed");
+        System.out.println("Test case 11 passed");
     }
 
     @AfterClass
