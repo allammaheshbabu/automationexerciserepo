@@ -2,68 +2,63 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JDK21' // Make sure this JDK name matches Jenkins configuration
+        // Make sure JDK21 and Maven are installed in Jenkins
+        jdk 'JDK21'
+        maven 'Maven3'
     }
 
     environment {
-        PROJECT_DIR = "${WORKSPACE}" // Jenkins workspace
-        BIN_DIR = "${WORKSPACE}/bin"
-        SRC_DIR = "${WORKSPACE}/src"
-        LIB_DIR = "${WORKSPACE}/lib"
+        MAVEN_OPTS = '-Xmx1024m'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main',
-                    url: 'https://github.com/allammaheshbabu/automationexerciserepo.git'
+                echo 'Cloning GitHub repository...'
+                git url: 'https://github.com/allammaheshbabu/automationexerciserepo.git', branch: 'main'
             }
         }
 
-        stage('Prepare Workspace') {
+        stage('Build') {
             steps {
-                script {
-                    // Create bin folder if not exist
-                    if (!fileExists(BIN_DIR)) {
-                        sh "mkdir -p ${BIN_DIR}"
-                    }
-                }
+                echo 'Building project using Maven...'
+                bat 'mvn clean compile'
             }
         }
 
-        stage('Compile Java') {
+        stage('Run Tests') {
             steps {
-                script {
-                    echo "Compiling Java files..."
-                    // Using Windows cmd if agent is Windows
-                    bat """
-                    for /R ${SRC_DIR} %%f in (*.java) do (
-                        javac -d ${BIN_DIR} -cp "${LIB_DIR}/*;${BIN_DIR}" "%%f"
-                    )
-                    """
-                }
+                echo 'Running TestNG tests...'
+                bat 'mvn test'
             }
         }
 
-        stage('Run TestNG') {
+        stage('Archive Reports') {
             steps {
-                echo "Running TestNG tests..."
-                bat """
-                java -cp "${BIN_DIR};${LIB_DIR}/*" org.testng.TestNG testng.xml
-                """
+                echo 'Archiving TestNG reports...'
+                archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
+                publishHTML(target: [
+                    reportDir: 'target/surefire-reports',
+                    reportFiles: 'index.html',
+                    reportName: 'TestNG HTML Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: true
+                ])
             }
         }
     }
 
     post {
         always {
-            echo "Cleaning up workspace..."
+            echo 'Cleaning workspace...'
+            cleanWs()
         }
         success {
-            echo "Build and tests completed successfully!"
+            echo 'Build & Tests successful!'
         }
         failure {
-            echo "Build failed. Check logs for errors."
+            echo 'Build or tests failed!'
         }
     }
 }
