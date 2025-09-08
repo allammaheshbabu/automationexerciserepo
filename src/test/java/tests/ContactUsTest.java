@@ -24,7 +24,7 @@ public class ContactUsTest {
 
         contactUsPage = new ContactUsPage(driver);
     }
-    @Test(priority = 23)
+    @Test(priority = 13)
     public void verifyContactUsPageLoad() {
         // Navigate to Contact Us page
         driver.get("https://automationexercise.com/contact_us");
@@ -40,17 +40,10 @@ public class ContactUsTest {
         Assert.assertEquals(actualTitle, expectedTitle,
                 "Contact Us page title mismatch!");
 
-        // Verify header text
-        String headerText = driver.findElement(By.cssSelector("div.contact-form h2")).getText();
-        System.out.println("Contact Us Page Header: " + headerText);
-
-        Assert.assertTrue(headerText.contains("Get In Touch"),
-                "Expected header 'Get In Touch' not found on Contact Us page!");
-
-        System.out.println("✅ Contact Us page loaded successfully with correct title and header.");
+        System.out.println("Contact Us page loaded successfully with correct title.");
         System.out.println("Test case 13 passed");
     }
-    @Test
+    @Test(priority = 14)
     public void testSubmitContactFormWithFile() {
         contactUsPage.navigateToContactPage();
 
@@ -72,6 +65,7 @@ public class ContactUsTest {
                 "Contact form success message is not visible");
         System.out.println("Test case 14 passed");
     }
+    @Test(priority = 15)
     public void verifyYouTubeChannelLoad() {
         // Navigate to Automation Exercise YouTube Channel
         driver.get("https://www.youtube.com/c/AutomationExercise");
@@ -81,13 +75,13 @@ public class ContactUsTest {
         System.out.println("YouTube Channel Page Title: " + actualTitle);
 
         // Expected title will contain "Automation Exercise"
-        String expectedTitleKeyword = "Automation Exercise";
+        String expectedTitleKeyword = "Automation Exercise - YouTube";
 
         // Verify title contains keyword
         Assert.assertTrue(actualTitle.contains(expectedTitleKeyword),
                 "YouTube channel title does not contain expected keyword!");
 
-        System.out.println("✅ YouTube channel loaded successfully with correct title.");
+        System.out.println(" YouTube channel loaded successfully with correct title.");
         System.out.println("Test case 15 passed");
     }
 

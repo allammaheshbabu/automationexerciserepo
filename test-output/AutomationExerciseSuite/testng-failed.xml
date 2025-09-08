@@ -15,4 +15,27 @@
       </class> <!-- tests.RegisterTest -->
     </classes>
   </test> <!-- RegisterTests(failed) -->
+  <test thread-count="5" name="ProductCartTests(failed)">
+    <classes>
+      <class name="tests.ProductFlowTest">
+        <methods>
+          <include name="completeCheckoutFlow"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.ProductFlowTest -->
+    </classes>
+  </test> <!-- ProductCartTests(failed) -->
+  <test thread-count="5" name="contactTests(failed)">
+    <classes>
+      <class name="tests.ContactUsTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="verifyYouTubeChannelLoad"/>
+          <include name="setUp"/>
+          <include name="verifyContactUsPageLoad"/>
+        </methods>
+      </class> <!-- tests.ContactUsTest -->
+    </classes>
+  </test> <!-- contactTests(failed) -->
 </suite> <!-- Failed suite [AutomationExerciseSuite] -->

@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">13 methods, 1 failed,   12 passed</span>
+                    <span class="method-stats">15 methods, 4 failed,   11 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -103,7 +103,22 @@
                     <div class="method-list-content failed suite-AutomationExerciseSuite">
                       <span>
                         <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationExerciseSuite" title="tests.ProductFlowTest" class="method navigator-link" hash-for-method="completeCheckoutFlow">completeCheckoutFlow</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationExerciseSuite" title="tests.ContactUsTest" class="method navigator-link" hash-for-method="verifyContactUsPageLoad">verifyContactUsPageLoad</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-AutomationExerciseSuite" title="tests.RegisterTest" class="method navigator-link" hash-for-method="verifySignupPageTitle">verifySignupPageTitle</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationExerciseSuite" title="tests.ContactUsTest" class="method navigator-link" hash-for-method="verifyYouTubeChannelLoad">verifyYouTubeChannelLoad</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-AutomationExerciseSuite -->
@@ -115,11 +130,6 @@
                       <a href="#" panel-name="suite-AutomationExerciseSuite" class="show-methods passed suite-AutomationExerciseSuite"> (show)</a> <!-- show-methods passed suite-AutomationExerciseSuite -->
                     </span>
                     <div class="method-list-content passed suite-AutomationExerciseSuite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AutomationExerciseSuite" title="tests.ProductFlowTest" class="method navigator-link" hash-for-method="completeCheckoutFlow">completeCheckoutFlow</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-AutomationExerciseSuite" title="tests.ProductFlowTest" class="method navigator-link" hash-for-method="shoppingFlowWithLogin">shoppingFlowWithLogin</a> <!-- method navigator-link -->
@@ -190,6 +200,38 @@
           <div class="suite-AutomationExerciseSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
+              <span class="class-name">tests.ContactUsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyContactUsPageLoad">
+                  </a> <!-- verifyContactUsPageLoad -->
+                  <span class="method-name">verifyContactUsPageLoad</span>
+                  <div class="stack-trace">java.lang.AssertionError: Expected header &apos;Get In Touch&apos; not found on Contact Us page! expected [true] but found [false]
+	at tests.ContactUsTest.verifyContactUsPageLoad(ContactUsTest.java:47)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyYouTubeChannelLoad">
+                  </a> <!-- verifyYouTubeChannelLoad -->
+                  <span class="method-name">verifyYouTubeChannelLoad</span>
+                  <div class="stack-trace">java.lang.AssertionError: YouTube channel title does not contain expected keyword! expected [true] but found [false]
+	at tests.ContactUsTest.verifyYouTubeChannelLoad(ContactUsTest.java:88)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AutomationExerciseSuite-class-failed -->
+          <div class="suite-AutomationExerciseSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
               <span class="class-name">tests.RegisterTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -202,6 +244,44 @@
 	at tests.RegisterTest.verifySignupPageTitle(RegisterTest.java:30)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 30 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AutomationExerciseSuite-class-failed -->
+          <div class="suite-AutomationExerciseSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.ProductFlowTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="completeCheckoutFlow">
+                  </a> <!-- completeCheckoutFlow -->
+                  <span class="method-name">completeCheckoutFlow</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;/payment&quot; class=&quot;btn btn-default check_out&quot;&gt;...&lt;/a&gt; is not clickable at point (1212, 662). Other element would receive the click: &lt;iframe id=&quot;aswift_2&quot; name=&quot;aswift_2&quot; browsingtopics=&quot;true&quot; style=&quot;min-height: auto; max-height: none; min-width: auto; max-width: none; width: 1005px !important; height: 124px !important; display: block; margin: 0px auto;&quot; sandbox=&quot;allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation&quot; width=&quot;1005&quot; height=&quot;124&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; vspace=&quot;0&quot; hspace=&quot;0&quot; allowtransparency=&quot;true&quot; scrolling=&quot;no&quot; allow=&quot;attribution-reporting; run-ad-auction&quot; src=&quot;https://googleads.g.doubleclick.net/pagead/html/r20250903/r20190131/zrt_lookup_fy2021.html#RS-0-&amp;amp;adk=1812271801&amp;amp;client=ca-pub-1677597403311019&amp;amp;fa=1&amp;amp;ifi=3&amp;amp;uci=a!3&amp;amp;btvi=2&quot; data-google-container-id=&quot;a!3&quot; tabindex=&quot;0&quot; title=&quot;Advertisement&quot; aria-label=&quot;Advertisement&quot; data-google-query-id=&quot;CO_f66bFyI8DFRyKrAIdIzoIog&quot; data-load-complete=&quot;true&quot;&gt;&lt;/iframe&gt;
+  (Session info: chrome=140.0.7339.81)
+Build info: version: &apos;4.23.0&apos;, revision: &apos;4df0a231af&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8186f0c829f2287bba4c4c120b798704, clickElement {id=f.7A5A71946AC6F02A4F02FE68291EA781.d.DEEB0DA7098C973204D5DFC4083CFC79.e.599}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.81, chrome: {chromedriverVersion: 140.0.7339.80 (670b6f192f46..., userDataDir: C:\Users\allam\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60243}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60243/devtoo..., se:cdpVersion: 140.0.7339.81, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (8186f0c829f2287bba4c4c120b798704)] -&gt; css selector: a[href=&apos;/payment&apos;]]
+Session ID: 8186f0c829f2287bba4c4c120b798704
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:527)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at pages.CheckoutPage.clickPlaceOrder(CheckoutPage.java:21)
+	at tests.ProductFlowTest.completeCheckoutFlow(ProductFlowTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -257,13 +337,6 @@
               <span class="class-name">tests.ProductFlowTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="completeCheckoutFlow">
-                  </a> <!-- completeCheckoutFlow -->
-                  <span class="method-name">completeCheckoutFlow</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="shoppingFlowWithLogin">
@@ -402,59 +475,67 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(13);
+data.addRows(15);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testRegisterPositive')
 data.setCell(0, 2, 'tests.RegisterTest')
-data.setCell(0, 3, 25245);
+data.setCell(0, 3, 45679);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'completeCheckoutFlow')
 data.setCell(1, 2, 'tests.ProductFlowTest')
-data.setCell(1, 3, 12118);
+data.setCell(1, 3, 14896);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'shoppingFlowWithLogin')
 data.setCell(2, 2, 'tests.ProductFlowTest')
-data.setCell(2, 3, 11012);
+data.setCell(2, 3, 9990);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testLoginPositive')
 data.setCell(3, 2, 'tests.LoginTest')
-data.setCell(3, 3, 5524);
+data.setCell(3, 3, 6478);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'verifyProductDetailsPage')
+data.setCell(4, 1, 'verifyProductsPageTitle')
 data.setCell(4, 2, 'tests.ProductFlowTest')
-data.setCell(4, 3, 3930);
+data.setCell(4, 3, 4221);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'verifyProductsPageTitle')
-data.setCell(5, 2, 'tests.ProductFlowTest')
-data.setCell(5, 3, 3862);
+data.setCell(5, 1, 'verifyYouTubeChannelLoad')
+data.setCell(5, 2, 'tests.ContactUsTest')
+data.setCell(5, 3, 4061);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testRegisterNegative')
-data.setCell(6, 2, 'tests.RegisterTest')
-data.setCell(6, 3, 3709);
+data.setCell(6, 1, 'verifyContactUsPageLoad')
+data.setCell(6, 2, 'tests.ContactUsTest')
+data.setCell(6, 3, 3457);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testSubmitContactFormWithFile')
-data.setCell(7, 2, 'tests.ContactUsTest')
-data.setCell(7, 3, 2749);
+data.setCell(7, 1, 'testLoginNegative')
+data.setCell(7, 2, 'tests.LoginTest')
+data.setCell(7, 3, 3022);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testLoginNegative')
-data.setCell(8, 2, 'tests.LoginTest')
-data.setCell(8, 3, 2048);
+data.setCell(8, 1, 'testSubmitContactFormWithFile')
+data.setCell(8, 2, 'tests.ContactUsTest')
+data.setCell(8, 3, 2917);
 data.setCell(9, 0, 9)
-data.setCell(9, 1, 'verifyLoginPageTitle')
-data.setCell(9, 2, 'tests.LoginTest')
-data.setCell(9, 3, 1729);
+data.setCell(9, 1, 'testRegisterNegative')
+data.setCell(9, 2, 'tests.RegisterTest')
+data.setCell(9, 3, 2262);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'verifySignupPageTitle')
 data.setCell(10, 2, 'tests.RegisterTest')
-data.setCell(10, 3, 1530);
+data.setCell(10, 3, 1734);
 data.setCell(11, 0, 11)
-data.setCell(11, 1, 'testRegisterEmptyFields')
-data.setCell(11, 2, 'tests.RegisterTest')
-data.setCell(11, 3, 526);
+data.setCell(11, 1, 'verifyProductDetailsPage')
+data.setCell(11, 2, 'tests.ProductFlowTest')
+data.setCell(11, 3, 1721);
 data.setCell(12, 0, 12)
-data.setCell(12, 1, 'testLoginEmpty')
+data.setCell(12, 1, 'verifyLoginPageTitle')
 data.setCell(12, 2, 'tests.LoginTest')
-data.setCell(12, 3, 424);
+data.setCell(12, 3, 1508);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testLoginEmpty')
+data.setCell(13, 2, 'tests.LoginTest')
+data.setCell(13, 3, 518);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testRegisterEmptyFields')
+data.setCell(14, 2, 'tests.RegisterTest')
+data.setCell(14, 3, 272);
 window.suiteTableData['AutomationExerciseSuite']= { tableData: data, tableDiv: 'times-div-AutomationExerciseSuite'}
 return data;
 }
@@ -494,164 +575,178 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">verifySignupPageTitle</span>
-                <span class="method-start">5431 ms</span>
+                <span class="method-start">4946 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">6968 ms</span>
+                <span class="method-start">6692 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">7196 ms</span>
+                <span class="method-start">6926 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testRegisterPositive</span>
-                <span class="method-start">12639 ms</span>
+                <span class="method-start">9510 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">37896 ms</span>
+                <span class="method-start">55191 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">38245 ms</span>
+                <span class="method-start">55477 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testRegisterNegative</span>
-                <span class="method-start">40800 ms</span>
+                <span class="method-start">59981 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">44515 ms</span>
+                <span class="method-start">62247 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">45076 ms</span>
+                <span class="method-start">62469 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testRegisterEmptyFields</span>
-                <span class="method-start">49732 ms</span>
+                <span class="method-start">67203 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">50260 ms</span>
+                <span class="method-start">67479 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">51589 ms</span>
+                <span class="method-start">69172 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyLoginPageTitle</span>
-                <span class="method-start">56104 ms</span>
+                <span class="method-start">73715 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">57843 ms</span>
+                <span class="method-start">75225 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">58242 ms</span>
+                <span class="method-start">76555 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testLoginPositive</span>
-                <span class="method-start">63561 ms</span>
+                <span class="method-start">79345 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">69091 ms</span>
+                <span class="method-start">85825 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">69413 ms</span>
+                <span class="method-start">86207 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testLoginNegative</span>
-                <span class="method-start">74307 ms</span>
+                <span class="method-start">90376 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">76357 ms</span>
+                <span class="method-start">93405 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">76523 ms</span>
+                <span class="method-start">94140 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">testLoginEmpty</span>
-                <span class="method-start">80573 ms</span>
+                <span class="method-start">97908 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">81002 ms</span>
+                <span class="method-start">98428 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.ProductFlowTest</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">81291 ms</span>
+                <span class="method-start">99197 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyProductsPageTitle</span>
-                <span class="method-start">83964 ms</span>
+                <span class="method-start">102626 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">87828 ms</span>
+                <span class="method-start">106851 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">88045 ms</span>
+                <span class="method-start">107083 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyProductDetailsPage</span>
-                <span class="method-start">91095 ms</span>
+                <span class="method-start">124960 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">95026 ms</span>
+                <span class="method-start">126686 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">95218 ms</span>
+                <span class="method-start">126986 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">shoppingFlowWithLogin</span>
-                <span class="method-start">98565 ms</span>
+                <span class="method-start">131634 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">109583 ms</span>
+                <span class="method-start">141625 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">109953 ms</span>
+                <span class="method-start">141847 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">completeCheckoutFlow</span>
-                <span class="method-start">114174 ms</span>
+                <span class="method-start">144546 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">126295 ms</span>
+                <span class="method-start">159451 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">tests.ContactUsTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">127207 ms</span>
+                <span class="method-start">159934 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyContactUsPageLoad</span>
+                <span class="method-start">161773 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
                 <span class="method-name">testSubmitContactFormWithFile</span>
-                <span class="method-start">129196 ms</span>
+                <span class="method-start">165237 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">verifyYouTubeChannelLoad</span>
+                <span class="method-start">168159 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">131946 ms</span>
+                <span class="method-start">172237 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
