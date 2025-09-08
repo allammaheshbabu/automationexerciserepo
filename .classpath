@@ -111,5 +111,6 @@
 	<classpathentry kind="lib" path="C:/Users/allam/Downloads/selenium-java-4.35.0 (1)/opentelemetry-common-1.53.0-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/allam/Downloads/selenium-java-4.35.0 (1)/opentelemetry-context-1.53.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/allam/Downloads/selenium-java-4.35.0 (1)/opentelemetry-context-1.53.0-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/allam/Downloads/selenium-server-4.35.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
