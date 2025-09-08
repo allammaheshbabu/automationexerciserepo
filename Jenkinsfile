@@ -2,59 +2,74 @@ pipeline {
     agent any
 
     environment {
-        // Project workspace folder
-        PROJECT_DIR = "${env.WORKSPACE}"
-        // Day-wise screenshot folder
-        DATE = new Date().format("yyyy-MM-dd")
-        SCREENSHOT_DIR = "${env.WORKSPACE}/Screenshots/${DATE}"
+        JAVA_HOME = 'C:/Program Files/Java/jdk-21' // Update to your JDK path
+        PATH = "${env.JAVA_HOME}/bin;${env.PATH}"
+        PROJECT_DIR = "C:/Users/allam/eclipse-workspace/Eclipse Workspace/automation-testing-pratice"
+        LIB_DIR = "${PROJECT_DIR}/lib"
+        BIN_DIR = "${PROJECT_DIR}/bin"
     }
 
     stages {
 
-        stage('Checkout') {
+        stage('Checkout Code') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/allammaheshbabu/test_automation_pratice_repo.git'
+                git branch: 'main', url: 'https://github.com/allammaheshbabu/automationexerciserepo.git'
             }
         }
 
-        stage('Setup Screenshot Folder') {
+        stage('Compile') {
             steps {
+                echo 'Compiling Java files...'
                 script {
-                    // Create day-wise folder
-                    sh "mkdir -p '${SCREENSHOT_DIR}'"
+                    bat """
+                    cd "${PROJECT_DIR}"
+                    if not exist bin mkdir bin
+                    for /R src %%f in (*.java) do (
+                        javac -d bin -cp "lib/*;bin" "%%f"
+                    )
+                    """
                 }
             }
         }
 
         stage('Run Tests') {
             steps {
+                echo 'Running TestNG tests...'
                 script {
-                    // Run Maven tests
-                    sh "mvn clean test"
+                    bat """
+                    cd "${PROJECT_DIR}"
+                    java -cp "bin;lib/*" org.testng.TestNG testng.xml
+                    """
                 }
             }
         }
 
         stage('Publish Reports') {
             steps {
-                // Optional: archive screenshots
-                archiveArtifacts artifacts: "Screenshots/**", fingerprint: true
-
-                // Optional: publish Cucumber reports (requires plugin)
-                cucumberReports canComputeNew: false,
-                               fileIncludePattern: 'target/cucumber-reports/*.json',
-                               jsonReportDirectory: 'target/cucumber-reports',
-                               pluginUrlPath: '',
-                               skippedFails: false,
-                               pendingFails: false
+                echo 'Copy Extent Reports to Jenkins workspace'
+                // Assuming your Extent Reports output path is 'test-output/ExtentReports.html'
+                publishHTML(target: [
+                    reportDir: "${PROJECT_DIR}/test-output",
+                    reportFiles: 'ExtentReports.html',
+                    reportName: 'Extent Report',
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true,
+                    allowMissing: false
+                ])
             }
         }
     }
 
     post {
         always {
-            echo "Build finished. Screenshots stored at: ${SCREENSHOT_DIR}"
+            echo 'Cleaning up workspace...'
+            deleteDir()
+        }
+        failure {
+            echo 'Build failed!'
+        }
+        success {
+            echo 'Build succeeded!'
         }
     }
 }
