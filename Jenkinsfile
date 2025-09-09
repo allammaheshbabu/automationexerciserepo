@@ -26,7 +26,7 @@ pipeline {
                     echo 'Checking for changes to push...'
  
                     withCredentials([usernamePassword(
-                        credentialsId: 'allammaheshbabu232003', 
+                        credentialsId: 'Mahesh@123', 
                         usernameVariable: 'GIT_USER', 
                         passwordVariable: 'GIT_TOKEN')]) {
  
