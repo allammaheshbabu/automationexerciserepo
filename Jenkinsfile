@@ -31,8 +31,8 @@ pipeline {
                         passwordVariable: 'GIT_TOKEN')]) {
  
                         bat """
-                            git config user.email "jenkins@pipeline.com"
-                            git config user.name "Jenkins CI"
+                            git config user.email "allammaheshbabu232003@gmail.com"
+                            git config user.name "allammaheshbabu"
  
                             git status
                             git add .
