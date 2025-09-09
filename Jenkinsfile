@@ -1,110 +1,79 @@
 pipeline {
     agent any
-
-    tools {
-        jdk 'JDK21'
-        maven 'Maven3'
+ 
+    // Trigger pipeline automatically on Git changes
+    triggers {
+        pollSCM('H/5 * * * *') // Checks every 5 minutes for changes
     }
-
-    environment {
-        GIT_CREDENTIALS_ID = 'git-credentials' // Replace with your Jenkins credentials ID
-        BRANCH_NAME = 'main'
-        ECLIPSE_WORKSPACE = 'C:\\Users\\allam\\eclipse-workspace\\Eclipse Workspace' 
-        COMMIT_MESSAGE = 'Automated commit from Jenkins'
-        MAVEN_OPTS = '-Xmx1024m'
-    }
-
+ 
     stages {
-
-        stage('Checkout from Git') {
+        stage('Checkout') {
             steps {
-                echo "Checking out branch ${env.BRANCH_NAME}..."
-                checkout([$class: 'GitSCM',
-                    branches: [[name: "*/${env.BRANCH_NAME}"]],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/allammaheshbabu/automationexerciserepo.git', // Replace with your repo
-                        credentialsId: "${env.GIT_CREDENTIALS_ID}"
-                    ]]
-                ])
+                git branch: 'main',
+                    url: 'https://github.com/allammaheshbabu/automationexerciserepo.git'
             }
         }
-
-        stage('Copy Files from Eclipse Workspace') {
+ 
+        stage('Build & Test') {
             steps {
-                bat """
-                echo Copying files from Eclipse workspace...
-                xcopy /E /Y /I "${ECLIPSE_WORKSPACE}\\*" "."
-                """
+                bat 'mvn clean test -DsuiteXmlFile=src/test/resources/testng.xml'
             }
         }
-
-        stage('Configure Git') {
-            steps {
-                bat """
-                git config user.email "allammaheshbabu232003@gmail.com"
-                git config user.name "Mahesh Babu Allam"
-                """
-            }
-        }
-
+ 
         stage('Commit & Push Changes') {
             steps {
-                bat """
-                git add .
-
-                REM Check if there are changes before committing
-                git diff --cached --quiet
-                IF %ERRORLEVEL% NEQ 0 (
-                    echo Changes detected, committing...
-                    git commit -m "${COMMIT_MESSAGE}"
-                    git push origin ${BRANCH_NAME}
-                ) ELSE (
-                    echo No changes to commit.
-                )
-                """
-            }
-        }
-
-        stage('Build') {
-            steps {
-                echo 'Building project using Maven...'
-                bat 'mvn clean install'
-            }
-        }
-
-        stage('Run Tests') {
-            steps {
-                echo 'Running TestNG tests...'
-                bat 'mvn test'
-            }
-        }
-
-        stage('Archive Reports') {
-            steps {
-                echo 'Archiving TestNG reports...'
-                archiveArtifacts artifacts: '**/target/surefire-reports/*.xml', allowEmptyArchive: true
-                publishHTML(target: [
-                    reportDir: 'target/surefire-reports',
-                    reportFiles: 'index.html',
-                    reportName: 'TestNG HTML Report',
-                    keepAll: true,
-                    alwaysLinkToLastBuild: true,
-                    allowMissing: true
-                ])
+                script {
+                    echo 'Checking for changes to push...'
+ 
+                    withCredentials([usernamePassword(
+                        credentialsId: 'github-jenkins', 
+                        usernameVariable: 'GIT_USER', 
+                        passwordVariable: 'GIT_TOKEN')]) {
+ 
+                        bat """
+                            git config user.email "jenkins@pipeline.com"
+                            git config user.name "Jenkins CI"
+ 
+                            git status
+                            git add .
+ 
+                            REM Commit only if there are changes
+                            git diff --cached --quiet || git commit -m "Jenkins: Auto-commit after build"
+ 
+                            REM Push using token
+                            git push https://%GIT_USER%:%GIT_TOKEN%@github.com/allammaheshbabu/automationexerciserepo.git main
+                        """
+                    }
+                }
             }
         }
     }
-
+ 
     post {
         always {
-            echo 'Cleaning workspace...'
-            cleanWs()
-        }
-        success {
-            echo '✅ Build, Test, and Git push completed successfully!'
-        }
-        failure {
-            echo '❌ Build or tests failed!'
+            // Archive screenshots
+            archiveArtifacts artifacts: 'reports/screenshots/*', fingerprint: true
+ 
+            // Publish Cucumber Report
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports/cucumber-reports',
+                reportFiles: 'cucumber-report.html',
+                reportName: 'Cucumber Report'
+            ])
+ 
+            // Publish Extent Report
+            publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports/extent-reports',
+                reportFiles: 'index.html',
+                reportName: 'Extent Report'
+            ])
         }
     }
 }
+ 
