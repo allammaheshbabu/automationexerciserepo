@@ -8,7 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.ContactUsPage;
-
+import org.openqa.selenium.support.ui.*;
 import java.time.Duration;
 
 public class ContactUsTest {

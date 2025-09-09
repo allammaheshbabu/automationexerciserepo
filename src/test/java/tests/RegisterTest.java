@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import pages.RegisterPage;
 import pages.HomePage;
 import utils.TestData;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 
